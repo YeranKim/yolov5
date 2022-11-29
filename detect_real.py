@@ -154,6 +154,13 @@ def run(
                 det[:, :4] = scale_boxes(im.shape[2:], det[:, :4], im0.shape).round()
                 print('\n')
                 
+                # total number of frames of video
+                # totalFrame = int(vid_cap.get(cv2.CAP_PROP_FRAME_COUNT)) 
+                
+                time = vid_cap.get(cv2.CAP_PROP_POS_MSEC)
+                print('\n')
+                print('%d ms'% round(time_ms,2))
+               
                 
                 print('{:<15} {:<10} {:<10} {:<10} {:<10} {:<15}'.format('class', 'x1', 'y1', 'x2', 'y2', 'accuracy'))
                 print('\n')
